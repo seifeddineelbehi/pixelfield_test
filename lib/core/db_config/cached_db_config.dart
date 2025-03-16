@@ -1,22 +1,9 @@
-// ignore_for_file: unused_import
-
-library cached_db_config;
-
-// For more information on using drift, please see https://drift.simonbinder.eu/docs/getting-started/
-// A full cross-platform example is available here: https://github.com/simolus3/drift/tree/develop/examples/app
-
-import 'dart:io';
-
 import 'package:drift/drift.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
 import 'connection/connection.dart' as impl;
 
 part 'cached_db_config.g.dart';
-
-// For more information on using drift, please see https://drift.simonbinder.eu/docs/getting-started/
-// A full cross-platform example is available here: https://github.com/simolus3/drift/tree/develop/examples/app
 
 @DataClassName('collectionListTable')
 class CollectionListTable extends Table {

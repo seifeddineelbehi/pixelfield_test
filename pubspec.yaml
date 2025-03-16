@@ -48,7 +48,6 @@ dependencies:
   internet_connection_checker: ^3.0.1 # Checks internet connectivity and handles connection status updates.
 
   # Local Storage & Caching
-  shared_preferences: ^2.5.2 # Stores lightweight key-value pairs for user settings, authentication, etc.
   drift: ^2.26.0 # A powerful ORM for SQLite, enabling efficient local database management.
   sqlite3_flutter_libs: ^0.5.31  # Provides necessary SQLite libraries for Flutter apps.
 
