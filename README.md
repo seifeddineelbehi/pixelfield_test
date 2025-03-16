@@ -26,7 +26,6 @@ modular.
 Data is managed using the following:
 
 - **Drift**: An ORM for SQLite, providing efficient and robust local database management.
-- **SharedPreferences**: Stores lightweight, persistent key-value pairs for settings and preferences.
 - **Dartz**: A functional programming library used to handle errors gracefully using the `Either` type.
 
 **Connectivity** is handled using **internet_connection_checker** to monitor and react to changes in the network status.
