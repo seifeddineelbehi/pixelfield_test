@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
         builder: (contextMain, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Posts',
             home: SplashScreen(),
           );
         },

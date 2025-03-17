@@ -11,6 +11,7 @@ import 'package:pixelfield_test/features/collection/data/data_source/collection_
 import 'package:pixelfield_test/features/collection/data/model/bottle_model.dart';
 import 'package:pixelfield_test/features/collection/domain/repositories/collection_repository.dart';
 
+/// This class is a singleton and can be injected as a dependency.
 @injectable
 @singleton
 class CollectionRepositoryImpl implements CollectionRepository {
@@ -25,6 +26,9 @@ class CollectionRepositoryImpl implements CollectionRepository {
     required this.networkInfoImpl,
   });
 
+  /// Fetches collection bottles from the remote source if online,
+  /// otherwise retrieves them from the cache.
+  /// Returns a failure if neither source is available.
   @override
   Future<Either<Failure, List<BottleModel>>> getCollectionBottles(
       {required int id}) async {

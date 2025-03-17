@@ -17,6 +17,7 @@ part 'collection_state.dart';
 class CollectionBloc extends Bloc<CollectionEvent, CollectionState> {
   final CollectionRepositoryImpl collectionRepositoryImpl;
 
+  /// Bloc responsible for managing collection-related events and states.
   CollectionBloc({
     required this.collectionRepositoryImpl,
   }) : super(CollectionInitial()) {
@@ -26,18 +27,19 @@ class CollectionBloc extends Bloc<CollectionEvent, CollectionState> {
 
         final failureOrCollection =
             await collectionRepositoryImpl.getCollectionBottles(id: 0);
-        emit(_mapFailureOrPostsToState(failureOrCollection));
+        emit(_mapFailureOrCollectionToState(failureOrCollection));
       } else if (event is RefreshCollectionEvent) {
         emit(LoadingCollectionState());
 
         final failureOrCollection =
             await collectionRepositoryImpl.getCollectionBottles(id: 0);
-        emit(_mapFailureOrPostsToState(failureOrCollection));
+        emit(_mapFailureOrCollectionToState(failureOrCollection));
       }
     });
   }
 
-  CollectionState _mapFailureOrPostsToState(
+  /// Maps a failure or a successful collection fetch result to the appropriate state.
+  CollectionState _mapFailureOrCollectionToState(
       Either<Failure, List<BottleModel>> either) {
     return either.fold(
       (failure) => ErrorCollectionState(message: _mapFailureToMessage(failure)),

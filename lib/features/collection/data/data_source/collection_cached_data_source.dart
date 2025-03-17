@@ -11,6 +11,7 @@ import 'package:pixelfield_test/features/collection/data/model/history.dart';
 import 'package:pixelfield_test/features/collection/data/model/other_tasting_notes.dart';
 import 'package:pixelfield_test/features/collection/data/model/personal_tasting_note.dart';
 
+/// This class is a singleton and can be injected as a dependency.
 @injectable
 @singleton
 class CollectionCachedDataSource {
@@ -18,6 +19,7 @@ class CollectionCachedDataSource {
 
   CollectionCachedDataSource(this.cachedDB);
 
+  /// Adds a list of bottles to the cache, replacing existing entries if necessary.
   Future<void> addCollectionListToCache(
       {required List<BottleModel> listBottles}) async {
     try {
@@ -57,6 +59,8 @@ class CollectionCachedDataSource {
     }
   }
 
+  /// Fetches the cached list of bottles from the local database.
+  /// Throws [EmptyCacheException] if no data is found.
   Future<List<BottleModel>> fetchCachedCollectionList() async {
     try {
       final List<collectionListTable> allData =

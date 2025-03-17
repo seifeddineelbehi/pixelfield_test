@@ -47,7 +47,7 @@ class _BottleDetailsMainWidgetState extends State<BottleDetailsMainWidget> {
                 children: [
                   TextSpan(
                       text:
-                          "${calculateBottleAge(int.parse(widget.bottleModel.bottleProdYear!))}",
+                          calculateBottleAge(int.parse(widget.bottleModel.bottleProdYear!)),
                       // Second part
                       style: AppTextStyles.ebGaramondLarge(
                           fontWeight: FontWeight.w500,
